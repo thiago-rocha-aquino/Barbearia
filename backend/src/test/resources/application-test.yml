@@ -1,0 +1,27 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+
+  flyway:
+    enabled: true
+
+app:
+  jwt:
+    secret: test-secret-key-for-jwt-must-be-at-least-256-bits-long
+    expiration: 3600000
+
+  booking:
+    min-advance-hours: 1
+    max-days-ahead: 30
+    slot-duration-minutes: 15
+    client-cancel-hours: 4
+
+  notifications:
+    enabled: false
+
+logging:
+  level:
+    root: WARN
+    com.barbearia: INFO

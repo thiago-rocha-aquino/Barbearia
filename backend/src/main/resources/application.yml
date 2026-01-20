@@ -1,0 +1,101 @@
+spring:
+  application:
+    name: barbearia-api
+
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:barbearia}
+    username: ${DB_USER:barbearia}
+    password: ${DB_PASSWORD:barbearia123}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: ${SHOW_SQL:false}
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+  mail:
+    host: ${SMTP_HOST:localhost}
+    port: ${SMTP_PORT:587}
+    username: ${SMTP_USER:}
+    password: ${SMTP_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: ${SMTP_AUTH:true}
+          starttls:
+            enable: ${SMTP_STARTTLS:true}
+    from: ${MAIL_FROM:noreply@barbearia.com}
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    time-zone: ${TIMEZONE:America/Sao_Paulo}
+
+server:
+  port: ${SERVER_PORT:8080}
+
+# Application specific configurations
+app:
+  jwt:
+    secret: ${JWT_SECRET:minha-chave-secreta-muito-longa-para-jwt-256-bits-minimo}
+    expiration: ${JWT_EXPIRATION:86400000} # 24 hours
+
+  booking:
+    min-advance-hours: ${BOOKING_MIN_ADVANCE_HOURS:1}
+    max-days-ahead: ${BOOKING_MAX_DAYS_AHEAD:30}
+    slot-duration-minutes: ${BOOKING_SLOT_DURATION:15}
+    client-cancel-hours: ${BOOKING_CLIENT_CANCEL_HOURS:4}
+
+  admin:
+    default-email: ${ADMIN_EMAIL:admin@barbearia.com}
+    default-password: ${ADMIN_PASSWORD:admin123}
+    default-name: ${ADMIN_NAME:Administrador}
+
+  business:
+    name: ${BUSINESS_NAME:Barbearia}
+    address: ${BUSINESS_ADDRESS:Rua Example, 123}
+    phone: ${BUSINESS_PHONE:(11) 99999-9999}
+
+  notifications:
+    enabled: ${NOTIFICATIONS_ENABLED:true}
+    reminder-24h: ${REMINDER_24H:true}
+    reminder-2h: ${REMINDER_2H:true}
+
+# Logging
+logging:
+  level:
+    root: INFO
+    com.barbearia: ${LOG_LEVEL:DEBUG}
+    org.springframework.security: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when_authorized
+  health:
+    mail:
+      enabled: false
+
+# OpenAPI
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
