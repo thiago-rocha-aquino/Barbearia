@@ -240,19 +240,6 @@ cd frontend
 npm run lint
 ```
 
-## Próximos Passos (Versão Pro)
 
-- [ ] Integração com pagamento (Stripe/Mercado Pago)
-- [ ] WhatsApp Business API para notificações
-- [ ] Sistema de fidelidade (pontos)
-- [ ] Multi-tenant (franquias)
-- [ ] App mobile (React Native)
-- [ ] Relatórios avançados com gráficos
 
-## Licença
 
-MIT
-
-## Suporte
-
-Para dúvidas ou sugestões, abra uma issue no repositório.
