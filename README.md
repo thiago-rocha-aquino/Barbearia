@@ -75,7 +75,7 @@ Sistema completo de agendamento para barbearia com backend em Java (Spring Boot)
 - **Buffer entre serviços**: configurável por serviço
 - **Sem sobreposição**: agendamentos e bloqueios
 
-ok
+
 
 
 
