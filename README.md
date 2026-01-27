@@ -1,23 +1,6 @@
-# Barbearia - Sistema de Agendamento Online
+# Sistema de Agendamento Online
 
-Sistema completo de agendamento para barbearia com backend em Java (Spring Boot) e frontend em Next.js.
-
-## Funcionalidades
-
-### Para Clientes (Público)
-- Agendamento online em 5 passos simples
-- Escolha de serviço, profissional, data e horário
-- Confirmação imediata por email
-- Cancelamento e reagendamento (até 4h antes)
-- Página de confirmação com detalhes
-
-### Para Administração
-- Dashboard com estatísticas em tempo real
-- Agenda visual (calendário semana/dia)
-- Gestão de serviços (criar, editar, preços)
-- Gestão de disponibilidade (expediente + bloqueios)
-- Relatórios de faturamento e no-shows
-- Ações rápidas: concluir, cancelar, marcar no-show
+Sistema completo de agendamento para barbearia com backend em Java (Spring Boot).
 
 ## Tecnologias
 
