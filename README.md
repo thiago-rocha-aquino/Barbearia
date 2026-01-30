@@ -1,6 +1,6 @@
 # Sistema de Agendamento Online
 
-Sistema completo de agendamento para barbearia com backend em Java (Spring Boot).
+Sistema completo de agendamento para barbearia.
 
 ## Tecnologias
 
