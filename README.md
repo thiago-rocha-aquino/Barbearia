@@ -22,19 +22,19 @@ Sistema completo de agendamento para barbearia com backend em Java (Spring Boot)
 ## Tecnologias
 
 ### Backend
-- Java 21
-- Spring Boot 3.2
+- Java 
+- Spring Boot 
 - Spring Security + JWT
 - PostgreSQL + Flyway
 - Testcontainers
-- SpringDoc OpenAPI (Swagger)
+- Swagger
 
 ### Frontend
-- Next.js 14 (App Router)
+- Next.js
 - TypeScript
 - Tailwind CSS
 - shadcn/ui
-- React Query (TanStack)
+- React Query
 - react-big-calendar
 
 ## Pré-requisitos
@@ -184,75 +184,3 @@ barbearia/
 - **Buffer entre serviços**: configurável por serviço
 - **Sem sobreposição**: agendamentos e bloqueios
 
-## Deploy em Produção
-
-### Opção 1: Docker Compose
-
-```bash
-# Configure variáveis de produção
-cp .env.example .env
-# Edite .env com valores de produção
-
-# Build e start
-docker-compose -f docker-compose.yml up -d --build
-```
-
-### Opção 2: Cloud
-
-**Railway/Render/Fly.io**:
-1. Conecte repositório Git
-2. Configure variáveis de ambiente
-3. Deploy automático
-
-**Kubernetes/AWS ECS**:
-- Use as imagens Docker geradas
-- Configure secrets para variáveis sensíveis
-- Use RDS/Cloud SQL para PostgreSQL
-
-### Checklist de Produção
-
-- [ ] Alterar `JWT_SECRET` para valor seguro (256+ bits)
-- [ ] Alterar senha do admin
-- [ ] Configurar SMTP para emails
-- [ ] Habilitar `NOTIFICATIONS_ENABLED=true`
-- [ ] Configurar backup do PostgreSQL
-- [ ] Usar HTTPS (nginx/traefik na frente)
-- [ ] Configurar CORS para domínio de produção
-
-## Testes
-
-### Backend
-
-```bash
-cd backend
-
-# Testes unitários
-./mvnw test
-
-# Testes de integração (requer Docker)
-./mvnw verify
-```
-
-### Frontend
-
-```bash
-cd frontend
-npm run lint
-```
-
-## Próximos Passos (Versão Pro)
-
-- [ ] Integração com pagamento (Stripe/Mercado Pago)
-- [ ] WhatsApp Business API para notificações
-- [ ] Sistema de fidelidade (pontos)
-- [ ] Multi-tenant (franquias)
-- [ ] App mobile (React Native)
-- [ ] Relatórios avançados com gráficos
-
-## Licença
-
-MIT
-
-## Suporte
-
-Para dúvidas ou sugestões, abra uma issue no repositório.
