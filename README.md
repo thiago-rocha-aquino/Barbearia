@@ -35,7 +35,6 @@ Sistema completo de agendamento para barbearia com backend em Java (Spring Boot)
 - Tailwind CSS
 - shadcn/ui
 - React Query
-- react-big-calendar
 
 
 ## Início Rápido
