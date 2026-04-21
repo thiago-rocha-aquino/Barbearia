@@ -179,3 +179,4 @@ barbearia/
 - **Buffer entre serviços**: configurável por serviço
 - **Sem sobreposição**: agendamentos e bloqueios
 
+futuras implementações
